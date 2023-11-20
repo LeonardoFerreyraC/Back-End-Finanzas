@@ -42,7 +42,7 @@ public class UsersController {
         return new ResponseEntity<>(userResource, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("?email={email}")
     public ResponseEntity<UserResource> getUserByEmail(@PathVariable String email){
         var getUserByEmailQuery = new GetUserByEmailQuery(email);
         var user = userQueryService.handle(getUserByEmailQuery);
