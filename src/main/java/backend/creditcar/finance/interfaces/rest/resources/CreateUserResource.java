@@ -1,0 +1,4 @@
+package backend.creditcar.finance.interfaces.rest.resources;
+
+public record CreateUserResource(String name, String lastName, String email, String password) {
+}
