@@ -42,8 +42,8 @@ public class UsersController {
         return new ResponseEntity<>(userResource, HttpStatus.CREATED);
     }
 
-    @GetMapping("?email={email}")
-    public ResponseEntity<UserResource> getUserByEmail(@PathVariable String email){
+    @GetMapping()
+    public ResponseEntity<UserResource> getUserByEmail(@RequestParam String email){
         var getUserByEmailQuery = new GetUserByEmailQuery(email);
         var user = userQueryService.handle(getUserByEmailQuery);
         if(user.isEmpty()){
